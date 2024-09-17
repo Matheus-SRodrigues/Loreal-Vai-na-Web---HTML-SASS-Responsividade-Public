@@ -1,0 +1,148 @@
+$body-background:#efeef3;
+$color-text: #000000;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EFEEF3;
+    font-family: 'Kodchasan';
+    overflow-x: hidden;
+}
+
+.banner {
+    height: 400px;
+    min-width: 100vw; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+a {
+    text-decoration: none;
+    color: $color-text;
+}
+
+
+header {
+    @include flex-center();
+    height: 20vh;
+    padding: 0 2vw; 
+}
+
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ul {
+    @include flex-center();
+    flex-wrap: wrap;
+}
+
+li {
+    list-style: none;
+    margin-right: 6vw;
+    margin-bottom: 10px;
+}
+
+section {
+    @include flex-center();
+    padding: 3% 10%;
+}
+
+.new-elseve {
+    text-align: center;
+}
+
+div {
+    max-width: 50%;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+    .banner {
+        height: 250px;
+        display: none;
+    }
+
+    nav {
+        flex-direction: row;
+    }
+
+    ul {
+        flex-direction: column-reverse; 
+        padding: 0;
+    }
+
+    li {
+        margin-right: 0; 
+        margin-bottom: 5px;
+    }
+
+    section {
+        flex-direction: column; 
+    }
+
+    div {
+        max-width: 100%;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .banner {
+        height: 300px;
+    }
+
+    ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    section {
+        padding: 5% 10%;
+    }
+
+    div {
+        max-width: 70%;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .banner {
+        height: 400px;
+    }
+
+    ul {
+        justify-content: center;
+    }
+
+    section {
+        padding: 3% 10%;
+    }
+
+    div {
+        max-width: 50%;
+    }
+}
